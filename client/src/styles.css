@@ -1,0 +1,508 @@
+/**
+ * TECTRIS - Component Styles
+ * 
+ * Estilos específicos para telas, componentes e layout
+ */
+
+/* ==================== LAYOUT GERAL ==================== */
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* ==================== TELA INICIAL ==================== */
+
+.start-screen {
+  background: linear-gradient(135deg, #050812 0%, #0a0e27 50%, #1a1a3e 100%);
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.start-content {
+  max-width: 600px;
+  padding: var(--spacing-2xl);
+}
+
+.start-content h1 {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: 0.1em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-neon-cyan);
+  text-shadow: var(--shadow-glow-cyan);
+  margin-bottom: var(--spacing-lg);
+}
+
+.start-description {
+  background: rgba(0, 217, 255, 0.05);
+  border-left: 3px solid var(--color-neon-cyan);
+  padding: var(--spacing-lg);
+  border-radius: 4px;
+  margin: var(--spacing-lg) 0;
+}
+
+.start-description p {
+  margin-bottom: var(--spacing-md);
+}
+
+.start-description p:last-child {
+  margin-bottom: 0;
+}
+
+.start-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin: var(--spacing-2xl) 0;
+}
+
+.feature {
+  padding: var(--spacing-md);
+  background: rgba(10, 14, 39, 0.6);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  border-color: rgba(0, 255, 136, 0.5);
+  background: rgba(0, 255, 136, 0.05);
+  transform: translateX(5px);
+}
+
+.btn-large {
+  padding: var(--spacing-md) var(--spacing-2xl);
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.controls-info {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.controls-info p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.controls-info strong {
+  color: var(--color-neon-cyan);
+}
+
+/* ==================== TELA DO JOGO ==================== */
+
+.game-screen {
+  display: grid !important;
+  grid-template-columns: 1fr 300px;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, #050812 0%, #0a0e27 100%);
+  overflow: hidden;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--spacing-lg);
+  width: 100%;
+  height: 100%;
+}
+
+.game-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: var(--spacing-lg);
+}
+
+.board-wrapper {
+  position: relative;
+  background: #050812;
+  border: 2px solid var(--color-neon-cyan);
+  box-shadow: var(--shadow-glow-cyan), inset 0 0 20px rgba(0, 217, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#board-canvas {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.game-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* ==================== PAINEL DE STATS ==================== */
+
+.stats-panel {
+  flex-shrink: 0;
+}
+
+.stats-panel h3 {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ==================== PAINEL PRÓXIMA PEÇA ==================== */
+
+.next-piece-panel {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.next-piece-panel h3 {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.next-piece-wrapper {
+  background: #050812;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 4px;
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#next-piece-canvas {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* ==================== PAINEL DE CONTROLES ==================== */
+
+.controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.controls-panel button {
+  width: 100%;
+}
+
+/* ==================== CARD DE PERGUNTA ==================== */
+
+.question-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 2px solid var(--color-neon-cyan);
+  box-shadow: var(--shadow-glow-cyan), 0 0 50px rgba(0, 217, 255, 0.3);
+  background: rgba(10, 14, 39, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.question-content {
+  padding: var(--spacing-lg);
+}
+
+#question-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.option-btn {
+  text-align: left;
+  padding: var(--spacing-md);
+  background: transparent;
+  border: 2px solid var(--color-neon-cyan);
+  color: var(--color-neon-cyan);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.option-btn:hover:not(:disabled) {
+  background: var(--color-neon-cyan);
+  color: var(--color-bg-dark);
+  transform: translateX(5px);
+}
+
+.option-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.option-selected {
+  background: var(--color-neon-green) !important;
+  color: var(--color-bg-dark) !important;
+  border-color: var(--color-neon-green) !important;
+  box-shadow: var(--shadow-glow-green) !important;
+  transform: scale(1.05) !important;
+}
+
+.question-result {
+  padding: var(--spacing-lg);
+  border-radius: 4px;
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
+.question-result.success {
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid var(--color-neon-green);
+}
+
+.question-result.error {
+  background: rgba(255, 0, 110, 0.1);
+  border: 1px solid var(--color-neon-magenta);
+}
+
+.result-message {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.result-answer {
+  font-size: 0.85rem;
+}
+
+/* ==================== LINHA OBJETIVO ==================== */
+
+.objective-line-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(255, 190, 11, 0.1);
+  border: 1px solid var(--color-neon-yellow);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-md);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.objective-line-indicator::before {
+  content: '◆';
+  color: var(--color-neon-yellow);
+  font-size: 1.2rem;
+  text-shadow: var(--shadow-glow-yellow);
+}
+
+.objective-line-indicator span {
+  color: var(--color-neon-yellow);
+  text-shadow: var(--shadow-glow-yellow);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ==================== TELA GAME OVER ==================== */
+
+.gameover-screen {
+  background: linear-gradient(135deg, #050812 0%, #0a0e27 50%, #1a1a3e 100%);
+  justify-content: center;
+  align-items: center;
+}
+
+.gameover-content {
+  max-width: 500px;
+  width: 90%;
+  border: 2px solid var(--color-neon-magenta);
+  box-shadow: var(--shadow-glow-magenta);
+}
+
+.gameover-content h1 {
+  text-shadow: var(--shadow-glow-magenta);
+}
+
+.final-score {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: rgba(255, 0, 110, 0.05);
+  border: 1px solid rgba(255, 0, 110, 0.2);
+  border-radius: 4px;
+}
+
+.final-score h2 {
+  font-size: 2.5rem;
+  margin-top: var(--spacing-md);
+}
+
+.final-stats {
+  background: rgba(0, 217, 255, 0.05);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 4px;
+  padding: var(--spacing-lg);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+  font-size: 0.95rem;
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-row span:first-child {
+  color: var(--color-text-muted);
+}
+
+.stat-row span:last-child {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 1024px) {
+  .game-screen {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .game-container {
+    grid-template-columns: 1fr;
+  }
+
+  .game-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    height: auto;
+  }
+
+  .controls-panel {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-screen {
+    padding: var(--spacing-md);
+  }
+
+  .game-main {
+    padding-top: var(--spacing-md);
+  }
+
+  #board-canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  .game-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .start-content {
+    padding: var(--spacing-lg);
+  }
+
+  .start-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .question-card {
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .gameover-content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .start-features {
+    gap: var(--spacing-sm);
+  }
+
+  .feature {
+    padding: var(--spacing-md);
+    font-size: 0.85rem;
+  }
+
+  .controls-info {
+    font-size: 0.8rem;
+  }
+
+  .controls-info p {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .stat-item {
+    font-size: 0.85rem;
+  }
+
+  .stat-value {
+    font-size: 0.95rem;
+  }
+}
