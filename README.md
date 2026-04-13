@@ -2,7 +2,7 @@
 
 Um protótipo jogável e visualmente atrativo de um jogo educacional que combina as mecânicas clássicas do Tetris com desafios de lógica de programação em C.
 
-## 🎮 Visão Geral
+## 🎮 Visão Geral link https://jaozinnm.github.io/tetctris/
 
 **Tectris** é um jogo educacional inovador que une **aprendizado + gameplay + desafio + feedback visual**. Durante a partida, o jogador controla peças que caem (como em Tetris) e, em momentos específicos, deve responder perguntas de lógica de programação em C. As respostas corretas geram recompensas (pontos bônus), enquanto erros resultam em penalidades (perda de pontos e adição de blocos ao tabuleiro).
 
